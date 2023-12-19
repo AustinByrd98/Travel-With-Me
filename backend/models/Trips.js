@@ -1,14 +1,14 @@
 const { default: mongoose } = require("mongoose");
 
 const PlansSchema = new mongoose.Schema ({
-    tripName: String,
+    tripName:{String, required:true },
     peopleNumber:Number,
     budget:Number,
     foodPlan: String,
     foodPricing: Number,
     lodging: String,
     lodgingPrice:Number,
-    tripLocation: String, 
+    tripLocation:{String, required:true} , 
     vists:String,
     travelMeans: String,
     travelMeansPrice: String
