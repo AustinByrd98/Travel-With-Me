@@ -2,6 +2,7 @@ const { default: mongoose } = require("mongoose");
 
 const PlansSchema = new mongoose.Schema ({
     tripName:{String, required:true },
+    date: {Date, required:true },
     peopleNumber:Number,
     budget:Number,
     foodPlan: String,
