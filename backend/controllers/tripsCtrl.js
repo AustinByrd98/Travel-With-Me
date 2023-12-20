@@ -7,11 +7,23 @@ const createTrip =(req,res)=>{
         if(!createdTrip){
             res.status(400).json({message:"can not make trip"})
         } else {
-            res.status(201).json({message:'trip made'})
+            res.status(201).json({data:createdTrip})
+        }
+    })
+}
+
+const getTrips =(req,res)=>{
+    db.Trips.find({})
+    .then((foundTrips)=>{
+        if(!foundTrips){
+            res.status(400).json({message:"cannot find trips "})
+        } else{
+            res.status(200).json({data:foundTrips})
         }
     })
 }
 
 module.exports={
     createTrip,
+    getTrips
 }

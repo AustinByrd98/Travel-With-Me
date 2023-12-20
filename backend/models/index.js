@@ -1,6 +1,6 @@
 const { error } = require('console')
 const mongoose = require('mongoose')
-const {MONGOULR} = process.env
+const {MONGOULR} =process.env
 
 mongoose.connect(MONGOULR,{
     useUnifiedTopology: true,
