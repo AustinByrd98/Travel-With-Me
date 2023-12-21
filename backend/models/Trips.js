@@ -1,4 +1,4 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 const PlansSchema = new mongoose.Schema ({
     tripName:{type:String, required: true},

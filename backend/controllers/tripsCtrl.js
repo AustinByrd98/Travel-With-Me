@@ -13,14 +13,15 @@ const createTrip =(req,res)=>{
 }
 
 const getTrips =(req,res)=>{
-    db.Trips.find({})
-    .then((foundTrips)=>{
-        if(!foundTrips){
-            res.status(400).json({message:"cannot find trips "})
-        } else{
-            res.status(200).json({data:foundTrips})
-        }
-    })
+    res.send('get trips ')
+    // db.Trips.find({})
+    // .then((foundTrips)=>{
+    //     if(!foundTrips){
+    //         res.status(400).json({message:"cannot find trips "})
+    //     } else{
+    //         res.status(200).json({data:foundTrips})
+    //     }
+    // })
 }
 
 module.exports={

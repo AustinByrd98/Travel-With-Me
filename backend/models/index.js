@@ -10,7 +10,7 @@ mongoose.connect(MONGOULR,{
 mongoose.connection
 .on('open',()=>{console.log('Connected')})
 .on('close',()=>{console.log('disconected')})
-.on('error',()=>{console.log(error)})
+.on('error',(error)=>{console.log(error)})
 
 module.exports={
     Trips: require('./Trips')
