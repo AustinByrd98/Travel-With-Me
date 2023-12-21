@@ -8,7 +8,7 @@ const cors = require("cors")
 const dataBase = require("./models/index")
 const routes = require("./routes/index.js")
 //middlewear
-app.use(cors)
+app.use(cors());
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 

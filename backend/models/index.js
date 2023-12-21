@@ -1,8 +1,9 @@
-const { error } = require('console')
-const mongoose = require('mongoose')
-const {MONGOULR} =process.env
 
-mongoose.connect(MONGOULR,{
+const mongoose = require('mongoose')
+const {MONGOURL} =process.env
+const dbName = "Travel_App"
+
+mongoose.connect(MONGOURL + dbName,{
     useUnifiedTopology: true,
     useNewurlParser: true
 })
@@ -10,8 +11,9 @@ mongoose.connect(MONGOULR,{
 mongoose.connection
 .on('open',()=>{console.log('Connected')})
 .on('close',()=>{console.log('disconected')})
-.on('error',()=>{console.log(error)})
+.on('error',(error)=>{console.log(error)})
 
 module.exports={
-    Trips: require('./Trips')
+    Trips: require('./Trips'),
+    Users: require('./Users')
 }
