@@ -13,7 +13,6 @@ const createTrip =(req,res)=>{
 }
 
 const getTrips =(req,res)=>{
-    res.send('get trips ')
     db.Trips.find({})
     .then((foundTrips)=>{
         if(!foundTrips){
@@ -24,7 +23,31 @@ const getTrips =(req,res)=>{
     })
 }
 
+const updateTrips =(req,res)=>{
+    db.Trips.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then((updatedTrip)=>{
+        if(!updatedTrip){
+            res.status(400).json({message:"Couldn't update trip"})
+        } else{
+            res.status(200).json({data:updatedTrip})
+        }
+    })
+}
+
+const deleteTrip =(req,res)=>{
+    db.Trips.findByIdAndDelete(req.params.id)
+    .then((deletedTrip)=>{
+        if(!deletedTrip){
+            res.status(400).json({message:"Couldn't delete trip"})
+        } else{
+            res.status(200).json({data:deletedTrip, message:"trip deleted"})
+        }
+    })
+}
+
 module.exports={
     createTrip,
-    getTrips
+    getTrips,
+    updateTrips,
+    deleteTrip
 }
