@@ -2,7 +2,7 @@ const { error } = require('console')
 const mongoose = require('mongoose')
 const {MONGOULR} =process.env
 
-mongoose.connect(MONGOULR,{
+mongoose.connect(MONGOULR+"Travel-With-Me",{
     useUnifiedTopology: true,
     useNewurlParser: true
 })
