@@ -1,9 +1,9 @@
 
 const mongoose = require('mongoose')
-const {MONGOURL} =process.env
-const dbName = "Travel_App"
+const {MONGOULR} =process.env
 
-mongoose.connect(MONGOURL + dbName,{
+
+mongoose.connect(MONGOULR + "Travel-With-Me",{
     useUnifiedTopology: true,
     useNewurlParser: true
 })
