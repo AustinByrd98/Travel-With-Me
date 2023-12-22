@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const {MONGOULR} =process.env
 
 
-mongoose.connect(MONGOULR +"Travel-With-Me",{
+mongoose.connect(MONGOULR+"Travel-With-Me",{
     useUnifiedTopology: true,
     useNewurlParser: true
 })
