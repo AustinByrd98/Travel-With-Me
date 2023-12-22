@@ -1,0 +1,11 @@
+{
+  "name": "travel-with-me-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Schema.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
