@@ -1,3 +1,3 @@
 module.exports= {
-    tripsCtrl: require('./tripsCtrl.js')
+    tripsCtrl : require('./tripsCtrl.js')
 }
