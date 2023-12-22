@@ -1,7 +1,6 @@
-const { error } = require("console")
+const { error } = require('console')
 const mongoose = require('mongoose')
 const {MONGOULR} =process.env
-
 
 mongoose.connect(MONGOULR+"Travel-With-Me",{
     useUnifiedTopology: true,
@@ -14,6 +13,5 @@ mongoose.connection
 .on('error',(error)=>{console.log(error)})
 
 module.exports={
-    Trips: require('./Trips'),
-    Users: require('./Users')
+    Trips: require('./Trips')
 }
