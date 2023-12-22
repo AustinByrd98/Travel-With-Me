@@ -6,6 +6,8 @@ const {tripsCtrl} = require('../controllers')
 
 router.get('/', tripsCtrl.getTrips)
 router.post('/', tripsCtrl.createTrip)
+router.put('/:id',tripsCtrl.updateTrips)
+router.delete('/:id', tripsCtrl.deleteTrip)
 
 
 //console.log(db.Trips)
