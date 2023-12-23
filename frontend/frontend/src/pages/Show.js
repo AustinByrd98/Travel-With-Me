@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react'
 
-
-const tripFrom = (props) =>{
+const TripForm = (props) =>{
     const [formData, setFormData] = useState({
-        peopleNumber: '', 
+        peopleNumber: '',    
     })
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
 }
 
-const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value})
-}
-
+export default TripForm

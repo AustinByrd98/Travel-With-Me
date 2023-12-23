@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import Header from "frontend/frontend/public/components/header.js"
 
-const Header = () => {
-    <Header></Header>
+const [formData, setFormData] = useState({
+    peopleNumber: '',    
+})
+const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
 }
+
+
