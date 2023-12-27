@@ -1,6 +1,7 @@
 import React from "react"
+import { useState } from "react"
 
-const NewForm = () => {
+const NewForm = (props) => {
     return (
         <form>
             <label>
