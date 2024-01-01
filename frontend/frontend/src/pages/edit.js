@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "frontend/frontend/public/components/header.js";
 
-const Header = () => {
+Header = () => {
   <Header></Header>;
 };
 

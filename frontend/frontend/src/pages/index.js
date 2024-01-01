@@ -7,3 +7,5 @@ const Index = (props) =>{
     ))
    )
 }
+
+export default Index
