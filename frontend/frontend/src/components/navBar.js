@@ -6,19 +6,21 @@ import Navbar from "react-bootstrap/Navbar"
 
 const MainNavBar = () => {
     return (
-        <div class="d-flex justify-content-center">
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Navbar.Toggle aria-controls='basic-navbar-nav' />
-                <Navbar.Collapse id='basic-navbar-nav'>
-                <Nav className="mr-auto justify-content-center">
-                    <Nav.Link href="#Home">Home</Nav.Link>
-                    <Nav.Link href="#NewTrip">New Trip</Nav.Link>
-                    <Nav.Link href="#Login">Log In/Out</Nav.Link>
-                </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <div className="MainNavBar">
+            <div className="d-flex justify-content-center">
+                <Navbar expand="lg" className="bg-body-tertiary">
+                    <Container className="nav-container">
+                        <Navbar.Toggle aria-controls='basic-navbar-nav justify-content-center' />
+                        <Navbar.Collapse id='basic-navbar-nav'>
+                            <Nav className="mr-auto justify-content-center">
+                                <Nav.Link href="#Home">Home</Nav.Link>
+                                <Nav.Link href="#NewTrip">New Trip</Nav.Link>
+                                <Nav.Link href="#Login">Log In/Out</Nav.Link>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </div>
         </div>
     );
 }
