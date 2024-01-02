@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
 const PlansSchema = new mongoose.Schema ({
-    tripName:{type:String, required: true},
+    tripName:{type:String, required: false},
     // want to try using Date type here 
-    date: {type:String, required:true },
+    date: {type:String, required:false },
     peopleNumber:Number,
     budget:Number,
     foodPlan: String,
     foodPricing: Number,
     lodging: String,
     lodgingPrice:Number,
-    tripLocation:{type:String, required:true} , 
+    tripLocation:{type:String, required:false} , 
     vists:String,
     travelMeans: String,
     travelMeansPrice: String
