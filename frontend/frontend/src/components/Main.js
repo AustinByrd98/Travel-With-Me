@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
-import New from "../pages/New";
+import New from "../pages/new.js";
 import Show from "../pages/Show"
 import { BrowserRouter} from "react-router-dom";
 

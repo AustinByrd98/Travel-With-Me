@@ -1,22 +1,6 @@
-<<<<<<< HEAD
-import React from 'react'
-import { useState } from 'react'
-import NewForm from '../components/newForm'
-
-const TripForm = (props) =>{
-  return(
-<>
-<NewForm/>
-
-</>
-
-  )
-}
-=======
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
->>>>>>> 12fd4ac42fe177361ac55ad674ebdc5106a803be
 
 const Show = (props) => {
   const trips = props.trips 
