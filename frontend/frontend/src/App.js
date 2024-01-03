@@ -7,11 +7,16 @@ import TripCard from './components/TripCard.js'
 import New from "./pages/New.js"
 import Main from './components/Main.js'
 
+import New from "./pages/New.js"
+import Main from './components/Main.js'
+
 
 function App() {
   return (
     <div className="App">
       <Header/>
+      <Main/>
+      <NavBar/>
       <MainNavBar/>
       <TripCard/>
     </div>

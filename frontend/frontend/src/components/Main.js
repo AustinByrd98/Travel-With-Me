@@ -3,6 +3,7 @@ import {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
 import New from "../pages/New";
+import Show from "../pages/Show"
 import { BrowserRouter} from "react-router-dom";
 
 // use trips as state, but setting it to null 
@@ -41,6 +42,7 @@ const Main = (props) => {
             <Routes>
                 <Route path= '/' element={<Index trips={trips}/>} />
                 <Route path= '/new' element={<New trip={trips} createTrip={createTrip}/> }/>
+                <Route path= '/show/:id' element={<Show trip={trips}/>} />
             </Routes>
             
         </main>
