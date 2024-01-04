@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "frontend/frontend/public/components/header.js";
 import NavBar from '../components/navBar'
+import Footer from "../components/footer"
 
 
 const Show = (props) => {
@@ -28,6 +29,7 @@ const Show = (props) => {
         <button onClick={navigate('/')}>Back To Trips</button>
         <Header />
         <NavBar />
+        <Footer />
     </div>
   );
 };
