@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Header from "frontend/frontend/public/components/header.js";
+import NavBar from '../components/navBar'
 
 
 const Show = (props) => {
@@ -9,8 +11,6 @@ const Show = (props) => {
   const id = params.id
   const trip = trips.find((trip) => trip._id === id)
 
-
-   
   return (
     <div className='trips'>
         <h2>{trips.tripName}</h2>
@@ -26,6 +26,8 @@ const Show = (props) => {
         <h2>{trips.travelMeans}</h2>
         <h2>{trips.travelMeansPrice}</h2>
         <button onClick={navigate('/')}>Back To Trips</button>
+        <Header />
+        <NavBar />
     </div>
   );
 };
