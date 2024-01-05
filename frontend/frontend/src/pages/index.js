@@ -1,15 +1,25 @@
-import Header from "frontend/frontend/public/components/header.js";
-import NavBar from '../components/navBar'
+import TripCard from "../components/TripCard.js";
 
 const Index = (props) =>{
+    console.log(props)
+    if(!props.trips){
+        return(<h1>loading</h1>)
+    }
+
    return(
-    props.trips.map((trips) => (
-        <div key={trips._id} className='trips'>
-            <h3>{trips.name}</h3>
-            <Header />
-            <NavBar />
-        </div>
-    ))
+
+    <TripCard trips={props.trips}/>
+       
+    // //    props.trips.map((ele,index) => {
+
+    //         return(
+            
+    //     <div className='trips'>
+    //        <TripCard {...ele}
+    //        key={index}
+    //        />
+    //     </div>)
+    // })
    )
 }
 

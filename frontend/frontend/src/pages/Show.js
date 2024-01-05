@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "frontend/frontend/public/components/header.js";
+import Header from "../components/header.js";
 import NavBar from '../components/navBar'
 import Footer from "../components/footer"
 

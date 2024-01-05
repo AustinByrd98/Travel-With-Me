@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import NewForm from "../components/newForm"
-import Header from "frontend/frontend/public/components/header.js";
-import NavBar from '../components/navBar'
+
 
 export default function New(props){
     console.log(props)
@@ -88,8 +86,7 @@ export default function New(props){
       </label><br/>
       <input type="submit" value="submit" />
     </form>
-    <Header />
-    <NavBar />
+   
         </>
     )
 }
