@@ -2,7 +2,11 @@ const db = require('../models')
 
 //create function 
 const createTrip =(req,res)=>{
-    db.Trips.create(req.body)
+    const newTrip = {
+        ...req.body,
+        user: req.session.currentUser._id //Assoicating the new trip with the userId
+    }
+    db.Trips.create(newTrip)
     .then((createdTrip)=>{
         if(!createdTrip){
             res.status(400).json({message:"can not make trip"})
@@ -13,7 +17,7 @@ const createTrip =(req,res)=>{
 }
 
 const getTrips =(req,res)=>{
-    db.Trips.find({})
+    db.Trips.find({ user: req.session.currentUser._id})
     .then((foundTrips)=>{
         if(!foundTrips){
             res.status(400).json({message:"cannot find trips "})
@@ -24,7 +28,8 @@ const getTrips =(req,res)=>{
 }
 
 const updateTrips =(req,res)=>{
-    db.Trips.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    const userId = req.session.currentUser._id
+    db.Trips.findOneAndUpdate({id: req.params.id, user: userId}, req.body, {new:true})
     .then((updatedTrip)=>{
         if(!updatedTrip){
             res.status(400).json({message:"Couldn't update trip"})
@@ -35,7 +40,8 @@ const updateTrips =(req,res)=>{
 }
 
 const deleteTrip =(req,res)=>{
-    db.Trips.findByIdAndDelete(req.params.id)
+    const userId = req.session.currentUser._id
+    db.Trips.findOneAndDelete({id: req.params.id, user: userId})
     .then((deletedTrip)=>{
         if(!deletedTrip){
             res.status(400).json({message:"Couldn't delete trip"})

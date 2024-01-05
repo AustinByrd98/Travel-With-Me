@@ -1,7 +1,6 @@
 import './App.css';
 import Header from "./components/header.js"
 import NavBar from "./components/navBar.js"
-import New from "./pages/New.js"
 import Main from './components/Main.js'
 
 

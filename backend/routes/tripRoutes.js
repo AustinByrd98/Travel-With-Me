@@ -1,13 +1,13 @@
 const router = require('express').Router()
 const {tripsCtrl} = require('../controllers')
-//const db = require('../models')
+const isAuthenticated = require("../authentication/authentication")
 
 //routes
 
-router.get('/', tripsCtrl.getTrips)
-router.post('/', tripsCtrl.createTrip)
-router.put('/:id',tripsCtrl.updateTrips)
-router.delete('/:id', tripsCtrl.deleteTrip)
+router.get('/', isAuthenticated, tripsCtrl.getTrips)
+router.post('/', isAuthenticated, tripsCtrl.createTrip)
+router.put('/:id',isAuthenticated, tripsCtrl.updateTrips)
+router.delete('/:id', isAuthenticated, tripsCtrl.deleteTrip)
 
 
 //console.log(db.Trips)
