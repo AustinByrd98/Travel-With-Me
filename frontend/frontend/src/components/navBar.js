@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar"
-import { Nav.Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const MainNavBar = () => {
     return (
@@ -13,10 +13,10 @@ const MainNavBar = () => {
                         <Navbar.Toggle aria-controls='basic-navbar-nav justify-content-center' />
                         <Navbar.Collapse id='basic-navbar-nav'>
                             <Nav className="mr-auto justify-content-center">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/new">New Trip</Nav.Link>
-                                <Nav.Link href="/session">Log In/Out</Nav.Link>
-                                <Nav.Link href="/user">Log In/Out</Nav.Link>
+                                <NavLink href="/">Home</NavLink>
+                                <NavLink href="/session">Log In/Out</NavLink>
+                                <NavLink href="/user">Log In/Out</NavLink>
+                                <NavLink href="/new">New Trip</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
