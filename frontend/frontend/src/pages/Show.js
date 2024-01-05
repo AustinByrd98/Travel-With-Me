@@ -1,9 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/header.js";
-import NavBar from '../components/navBar'
 import Footer from "../components/footer"
-
 
 const Show = (props) => {
   const trips = props.trips 
@@ -15,20 +12,18 @@ const Show = (props) => {
   return (
     <div className='trips'>
         <h2>{trips.tripName}</h2>
-        <h2>{trips.date}</h2>
-        <h2>{trips.peopleNumber}</h2>
-        <h2>{trips.budget}</h2>
-        <h2>{trips.foodPlan}</h2>
-        <h2>{trips.foodPricing}</h2>
-        <h2>{trips.lodging}</h2>
-        <h2>{trips.lodgingPrice}</h2>
-        <h2>{trips.tripLocation}</h2>
-        <h2>{trips.visits}</h2>
-        <h2>{trips.travelMeans}</h2>
-        <h2>{trips.travelMeansPrice}</h2>
+        <p>{trips.date}</p>
+        <p>{trips.peopleNumber}</p>
+        <p>{trips.budget}</p>
+        <p>{trips.foodPlan}</p>
+        <p>{trips.foodPricing}</p>
+        <p>{trips.lodging}</p>
+        <p>{trips.lodgingPrice}</p>
+        <p>{trips.tripLocation}</p>
+        <p>{trips.visits}</p>
+        <p>{trips.travelMeans}</p>
+        <p>{trips.travelMeansPrice}</p>
         <button onClick={navigate('/')}>Back To Trips</button>
-        <Header />
-        <NavBar />
         <Footer />
     </div>
   );

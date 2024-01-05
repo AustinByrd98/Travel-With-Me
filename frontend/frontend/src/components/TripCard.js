@@ -1,13 +1,13 @@
 import React from "react";
 import { Card } from 'react-bootstrap';
-// import { link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function TripCard(props) {
     console.log(props)
     if(!props.trips){
         return(
             <>
-            <h1>loading</h1>
+            <h2>loading</h2>
             </>
         )
     }
@@ -15,8 +15,8 @@ function TripCard(props) {
     const renderCard = (card, index)=>{
 
     return (
-        <div className="trip-card">
-        {/* <link to={'/trip/${data.id}'}> */}
+        <NavLink to={'/trip/${trips._id}'}>
+        <div className="trip-card"> 
         <Card key={index} style={{ width: '25rem' }} className="h-80 shadow-sm bg-white rounded">  
             <Card.Body className="Card-body">
                 <div className="d-flex mb-2 justify-content-between">
@@ -26,8 +26,8 @@ function TripCard(props) {
                 </div>
             </Card.Body>
         </Card>
-        {/* </link> */}
         </div>
+        </NavLink>
     )
  }
     return (

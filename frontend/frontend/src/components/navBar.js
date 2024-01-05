@@ -14,9 +14,9 @@ const MainNavBar = () => {
                         <Navbar.Collapse id='basic-navbar-nav'>
                             <Nav className="mr-auto justify-content-center">
                                 <NavLink href="/">Home</NavLink>
-                                <NavLink href="/session">Log In/Out</NavLink>
-                                <NavLink href="/user">Log In/Out</NavLink>
                                 <NavLink href="/new">New Trip</NavLink>
+                                <NavLink href="/session">User Name</NavLink>
+                                <NavLink href="/user">Log Out</NavLink>                                
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
