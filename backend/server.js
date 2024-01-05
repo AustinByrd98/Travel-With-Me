@@ -5,12 +5,18 @@ const {PORT} = process.env
 const express = require("express")
 const app = express()
 const cors = require("cors")
+const session = require("express-session");
 const dataBase = require("./models/index")
 const routes = require("./routes/index.js")
 //middlewear
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
 
 app.use('/', routes)
 app.use((req,res)=>{res.status(404).json({message:"This is not a proper route"})})
