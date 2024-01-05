@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NewForm from "../components/newForm"
+// import NewForm from "../components/newForm"
 
 export default function New(props){
     console.log(props)

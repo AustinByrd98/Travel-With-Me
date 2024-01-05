@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
 import New from "../pages/new.js";
 import Show from "../pages/Show"
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 // use trips as state, but setting it to null 
 const Main = (props) => {

@@ -6,8 +6,6 @@ import MainNavBar from "./components/navBar.js";
 import TripCard from './components/TripCard.js'
 import Main from './components/Main.js'
 
-
-
 function App() {
   return (
     <div className="App">
