@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom"
 
-const Footer = () => {
+const Footer = (props) => {
+  const id = props.id
   return (
     <div className="RouterBar">
     <div class="d-flex justify-content-center">
@@ -14,8 +15,8 @@ const Footer = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className="mr-auto justify-content-center">
               <NavLink to="/" className="NavLinkStyle">Home</NavLink>
-              <NavLink to="#edit" className="NavLinkStyle">Edit</NavLink>
-              <NavLink to="#delete" className="NavLinkStyle">Delete</NavLink>
+              <NavLink to= {`/edit/:${id}`} className="NavLinkStyle" >Edit</NavLink>
+              <NavLink to="#delete"className="NavLinkStyle">Delete</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

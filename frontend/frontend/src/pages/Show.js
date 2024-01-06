@@ -29,7 +29,6 @@ const params = useParams()
         <p>Visits: {trip.visits}</p>
         <p>Trasportation: {trip.travelMeans}</p>
         <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
-        
         <Footer />
     </div>
   );
