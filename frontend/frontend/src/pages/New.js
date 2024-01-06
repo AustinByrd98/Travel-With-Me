@@ -50,7 +50,7 @@ export default function New(props){
         <span>Name your Trip </span> <input type="text" name="tripName" value={newForm.tripName} onChange={handleChange}/>
       </label><br />
       <label>
-        <span>Date </span> <input type="text" name="date" value={newForm.date} onChange={handleChange}/><br />
+        <span>Data </span> <input type="text" name="date" value={newForm.date} onChange={handleChange}/><br />
       </label><br />
       <label>
         <span>Number of People </span> <input type="text" name="peopleNumber" value={newForm.peopleNumber} onChange={handleChange}/>
@@ -78,7 +78,7 @@ export default function New(props){
         <input type="text" name="travelMeans"value={newForm.travelMeans} onChange={handleChange} />
       </label><br />
       <label>
-        <span>Cost Of Travel Means </span>
+        <span>Cost Of Travel Means </span>{" "}
         <input type="number" name="travelMeansPrice" value={newForm.travelMeansPrice} onChange={handleChange} />
       </label><br />
       <input className='submitButton' type="submit" value="submit" />
