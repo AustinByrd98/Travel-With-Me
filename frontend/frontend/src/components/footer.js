@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom"
 
 const Footer = (props) => {
   const id = props.id
+  
   return (
     <div className="RouterBar">
     <div class="d-flex justify-content-center">
@@ -16,7 +17,7 @@ const Footer = (props) => {
             <Nav className="mr-auto justify-content-center">            
              <NavLink to="/" className="NavLinkStyle">Home</NavLink>
               <NavLink to= {`/edit/${id}`} className="NavLinkStyle" >Edit</NavLink>
-              <NavLink to="#delete"className="NavLinkStyle">Delete</NavLink>
+              <button onClick={props.removeTrip}  className="NavLinkStyle" >DELETE</button>
 
             </Nav>
           </Navbar.Collapse>
