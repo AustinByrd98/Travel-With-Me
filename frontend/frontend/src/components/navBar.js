@@ -13,10 +13,10 @@ const MainNavBar = () => {
                         <Navbar.Toggle aria-controls='basic-navbar-nav justify-content-center' />
                         <Navbar.Collapse id='basic-navbar-nav'>
                             <Nav className="mr-auto justify-content-center">
-                                <NavLink href="/">Home</NavLink>
-                                <NavLink href="/new">New Trip</NavLink>
-                                <NavLink href="/session">User Name</NavLink>
-                                <NavLink href="/user">Log Out</NavLink>                                
+                                <NavLink to="/">Home</NavLink>
+                                <NavLink to="/new">New Trip</NavLink>
+                                <NavLink to="/session">User Name</NavLink>
+                                <NavLink to="/user">Log Out</NavLink>                                
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
