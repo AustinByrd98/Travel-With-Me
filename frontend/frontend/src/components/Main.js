@@ -11,7 +11,7 @@ const Main = (props) => {
     console.log('hi im here')
     const [ trips, setTrips ] = useState(null) 
 
-    const URL = 'http://localhost:4000/trips' 
+    const URL = 'http://localhost:4000/trips/' 
 
     // function to get trips 
     // sending a request to fetch  data from the url 
@@ -35,8 +35,8 @@ const Main = (props) => {
         })
         getTrips()
     }
-    const updateTrip = async (trip) =>{
-        await fetch(URL ,{
+    const updateTrip = async (trip,id) =>{
+        await fetch(URL + id,{
             method:'put',
             headers:{
                 'Content-Type': "application/json"

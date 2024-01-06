@@ -34,7 +34,8 @@ const Edit = (props) => {
   // preventDefault prevents the form from actually submitting
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateTrip(editForm)
+    props.updateTrip(editForm, id)
+    navigate('/')
     //onSave(editForm);
   };
 
