@@ -14,6 +14,7 @@ const MainNavBar = () => {
                         <Navbar.Collapse id='basic-navbar-nav align-items-baselin'>
                             <Nav className="mr-auto justify-content-center">
 
+
                                 <NavLink to="/" className="NavLinkStyle">Home</NavLink>
                                 <NavLink to="/new" className="NavLinkStyle">New Trip</NavLink>
                                 <NavLink to="/session" className="NavLinkStyle">User Name</NavLink>
