@@ -1,6 +1,8 @@
 import React from "react";
 import {useState} from "react";
 import { Route, Routes, useResolvedPath } from "react-router-dom"
+import Login from "../pages/login"
+import Register from "../pages/register"
 
 //Function for manipulating users state from parent App.js
 const Auth = (props) => {

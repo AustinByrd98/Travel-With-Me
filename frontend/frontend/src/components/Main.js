@@ -34,8 +34,13 @@ const Main = (props) => {
     }
 
     useEffect(()=>{
-        getTrips()
-    },[])
+        if(props.user) {
+            getTrips();
+        } else {
+            setTrips(null)
+        }
+    },[props.user])
+    
     return (
         <main>
            
