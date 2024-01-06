@@ -6,18 +6,21 @@ import { NavLink } from "react-router-dom"
 
 const Footer = () => {
   return (
+    <div className="RouterBar">
     <div class="d-flex justify-content-center">
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
+        <Container className="nav-container justify-content-center">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className="mr-auto justify-content-center">
-              <NavLink href="#edit">Edit</NavLink>
-              <NavLink href="#delete">Delete</NavLink>
+              <NavLink to="/" className="NavLinkStyle">Home</NavLink>
+              <NavLink to="#edit" className="NavLinkStyle">Edit</NavLink>
+              <NavLink to="#delete" className="NavLinkStyle">Delete</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+    </div>
     </div>
   );
 };
