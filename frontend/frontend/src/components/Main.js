@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
-import New from "../pages/New";
+import New from "../pages/New.js";
 import { BrowserRouter} from "react-router-dom";
 
 // use trips as state, but setting it to null 
