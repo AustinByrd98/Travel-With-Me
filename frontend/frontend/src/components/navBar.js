@@ -9,14 +9,15 @@ const MainNavBar = () => {
         <div className="MainNavBar">
             <div className="d-flex justify-content-center">
                 <Navbar expand="lg" className="bg-body-tertiary">
-                    <Container className="nav-container">
-                        <Navbar.Toggle aria-controls='basic-navbar-nav justify-content-center' />
-                        <Navbar.Collapse id='basic-navbar-nav'>
+                    <Container className="nav-container justify-content-center">
+                        <Navbar.Toggle aria-controls='basic-navbar-nav'/>
+                        <Navbar.Collapse id='basic-navbar-nav align-items-baselin'>
                             <Nav className="mr-auto justify-content-center">
-                                <Link href="/">Home</NavLink>
-                                <Link href="/new">New Trip</Link>
-                                <Link href="/session">User Name</Link>
-                                <Link href="/user">Log Out</Link>                                
+
+                                <NavLink to="/" className="NavLinkStyle">Home</NavLink>
+                                <NavLink to="/new" className="NavLinkStyle">New Trip</NavLink>
+                                <NavLink to="/session" className="NavLinkStyle">User Name</NavLink>
+                                <NavLink to="/user" className="NavLinkStyle">Log Out</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
