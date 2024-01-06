@@ -29,8 +29,7 @@ const params = useParams()
         <p>Visits: {trip.visits}</p>
         <p>Trasportation: {trip.travelMeans}</p>
         <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
-        <button onClick={() => navigate('/')}>Back To Trips</button>
-        <Footer id={trip._id} />
+        <Footer />
     </div>
   );
 };
