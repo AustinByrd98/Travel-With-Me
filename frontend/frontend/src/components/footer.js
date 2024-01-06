@@ -17,7 +17,7 @@ const Footer = (props) => {
             <Nav className="mr-auto justify-content-center">            
              <NavLink to="/" className="NavLinkStyle">Home</NavLink>
               <NavLink to= {`/edit/${id}`} className="NavLinkStyle" >Edit</NavLink>
-              <button onClick={props.removeTrip}  className="NavLinkStyle" >DELETE</button>
+              <button onClick={props.removeTrip}  className="DeleteRouteStyle" >DELETE</button>
 
             </Nav>
           </Navbar.Collapse>
