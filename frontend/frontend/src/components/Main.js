@@ -6,6 +6,7 @@ import Show from "../pages/Show"
 
 // use trips as state, but setting it to null 
 const Main = (props) => {
+    console.log('hi im here')
     const [ trips, setTrips ] = useState(null) 
 
     const URL = 'http://localhost:4000/trips' 
@@ -23,7 +24,7 @@ const Main = (props) => {
     }
 
     const createTrip = async (trip) =>{
-        await fetch(URL+'/new',{
+        await fetch(URL ,{
             method:'post',
             headers:{
                 'Content-Type': "application/json"
@@ -38,14 +39,14 @@ const Main = (props) => {
         console.log('use-effect')
         getTrips()
     },[])
-
+    console.log(trips)
     return (
         <main>
            
             <Routes>
                 <Route path= '/' element={<Index trips={trips}/>} />
                 <Route path= '/new' element={<New trip={trips} createTrip={createTrip}/> }/>
-                <Route path= '/show/:id' element={<Show trip={trips}/>} />
+                <Route path= '/show/:id' element={<Show trips={trips}/>} />
             </Routes>
             
         </main>
