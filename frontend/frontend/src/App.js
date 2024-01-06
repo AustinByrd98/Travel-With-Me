@@ -6,10 +6,11 @@ import MainNavBar from "./components/navBar.js";
 import Main from './components/Main.js'
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Header/>
+       <MainNavBar/>
       <Main/>
       <MainNavBar/>
     </div>
