@@ -26,7 +26,7 @@ const params = useParams()
         <p>Lodging: {trip.lodging}</p>
         <p>Lodging Cost: ${trip.lodgingPrice}</p>
         <p>Location: {trip.tripLocation}</p>
-        <p>Visits: {trip.visits}</p>
+        <p>Excursions: {trip.vists}</p>
         <p>Trasportation: {trip.travelMeans}</p>
         <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
         <Footer />
