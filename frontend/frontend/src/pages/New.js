@@ -74,9 +74,6 @@ export default function New(props){
         <span>Destination </span> <input type="text" name="tripLocation" value={newForm.tripLocation} onChange={handleChange} />
       </label><br />
       <label>
-        <span>Excursion </span> <input type="text" name="vists" value={newForm.vists} onChange={handleChange} />
-      </label><br />
-      <label>
         <span>Travel Means </span>
         <input type="text" name="travelMeans"value={newForm.travelMeans} onChange={handleChange} />
       </label><br />
