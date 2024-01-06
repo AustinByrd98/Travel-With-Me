@@ -3,27 +3,33 @@ import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../components/footer"
 
 const Show = (props) => {
-  const trips = props.trips 
+  // console.log(props.trip)
   const params = useParams()
-  const navigate = useNavigate()
   const id = params.id
-  const trip = trips.find((trip) => trip._id === id)
+  const trips = props.trip
+  const trip = trips?.find((trip) => trip._id === id)
+  const navigate = useNavigate()
+
+  if(!props.trip){
+    return
+    <h2> Loading... </h2>
+  }
 
   return (
     <div className='trips'>
-        <h2>{trips.tripName}</h2>
-        <p>{trips.date}</p>
-        <p>{trips.peopleNumber}</p>
-        <p>{trips.budget}</p>
-        <p>{trips.foodPlan}</p>
-        <p>{trips.foodPricing}</p>
-        <p>{trips.lodging}</p>
-        <p>{trips.lodgingPrice}</p>
-        <p>{trips.tripLocation}</p>
-        <p>{trips.visits}</p>
-        <p>{trips.travelMeans}</p>
-        <p>{trips.travelMeansPrice}</p>
-        <button onClick={navigate('/')}>Back To Trips</button>
+        <h2>{trip.tripName}</h2>
+        <p>{trip.date}</p>
+        <p>{trip.peopleNumber}</p>
+        <p>{trip.budget}</p>
+        <p>{trip.foodPlan}</p>
+        <p>{trip.foodPricing}</p>
+        <p>{trip.lodging}</p>
+        <p>{trip.lodgingPrice}</p>
+        <p>{trip.tripLocation}</p>
+        <p>{trip.visits}</p>
+        <p>{trip.travelMeans}</p>
+        <p>{trip.travelMeansPrice}</p>
+        <button onClick={() => navigate('/')}>Back To Trips</button>
         <Footer />
     </div>
   );
