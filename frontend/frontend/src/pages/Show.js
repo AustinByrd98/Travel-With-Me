@@ -30,7 +30,7 @@ const params = useParams()
         <p>{trip.travelMeans}</p>
         <p>{trip.travelMeansPrice}</p>
         <button onClick={() => navigate('/')}>Back To Trips</button>
-        <Footer />
+        <Footer id={trip._id} />
     </div>
   );
 };

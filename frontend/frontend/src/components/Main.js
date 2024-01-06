@@ -2,7 +2,9 @@ import React, {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
 import New from "../pages/New.js";
+import Show from "../pages/Show.js";
 import { BrowserRouter} from "react-router-dom";
+import Edit from "../pages/edit.js";
 
 // use trips as state, but setting it to null 
 const Main = (props) => {
@@ -33,6 +35,16 @@ const Main = (props) => {
         })
         getTrips()
     }
+    const updateTrip = async (trip) =>{
+        await fetch(URL ,{
+            method:'put',
+            headers:{
+                'Content-Type': "application/json"
+            },
+            body:JSON.stringify(trip)
+        })
+        getTrips()
+    }
 
     console.log(useEffect)
     useEffect(()=>{
@@ -47,6 +59,7 @@ const Main = (props) => {
                 <Route path= '/' element={<Index trips={trips}/>} />
                 <Route path= '/new' element={<New trip={trips} createTrip={createTrip}/> }/>
                 <Route path= '/show/:id' element={<Show trips={trips}/>} />
+                <Route path='/edit/:id' element={<Edit trip={trips} updateTrip={updateTrip}/>} />
             </Routes>
             
         </main>
