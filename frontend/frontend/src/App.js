@@ -12,7 +12,6 @@ function App(props) {
       <Header/>
        <MainNavBar/>
       <Main/>
-      <MainNavBar/>
     </div>
   );
 }

@@ -24,7 +24,7 @@ const Main = (props) => {
     }
 
     const createTrip = async (trip) =>{
-        await fetch(URL+'/new',{
+        await fetch(URL ,{
             method:'post',
             headers:{
                 'Content-Type': "application/json"

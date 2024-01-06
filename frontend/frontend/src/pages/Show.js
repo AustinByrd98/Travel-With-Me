@@ -10,11 +10,10 @@ const params = useParams()
   const id = params.id
   const trip = trips?.find((trip) => trip._id === id)
   const navigate = useNavigate()
-
-  if(!props.trip){
-    return
-    <h2> Loading... </h2>
-  
+    console.log(trip)
+  if(!trip){
+    return( <h2> Loading... </h2>)
+  }
 
   return (
     <div className='trips'>
