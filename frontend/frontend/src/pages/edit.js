@@ -1,27 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // // initialData to provide data to components before data has been fectched
 // // onSave waits for one data is returned
 const Edit = (props) => {
+
+
+
   console.log(props)
   const params = useParams();
-  const data = props.trip;
-  console.log(data);
+  const trips = props.trips;
+  console.log(trips);
   const id = params.id;
   console.log(id)
-  const trip = data?.find((trip) => trip._id === id);
-  const navigate = useNavigate();
-  console.log(trip);
+  const trip = trips?.find((trip) => trip._id === id)
+   console.log(trip);
+  const navigate = useNavigate(); 
+  
+  const [editForm, setEditForm] = useState(trip);
+  if (!trip) {
+    return <h2> Loading... </h2>;
+  }
+  
+  
+ 
 
 
   // trip was undefined, needed to provided a default inital state - used or operator 
-  const [editForm, setEditForm] = useState(trip || {tripName: ''});
+ 
 
-  // if (!trip) {
-  //   return <h2> Loading... </h2>;
-  // }
-
+  // 
   //   // state for edit from
 
   // useEffect(() => {
