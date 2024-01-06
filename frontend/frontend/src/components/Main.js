@@ -46,6 +46,13 @@ const Main = (props) => {
         getTrips()
     }
 
+    const deleteTrip = async (id)=>{
+        await fetch(URL + id,{
+            method:'DELETE',
+        })
+        getTrips()
+    }
+
     console.log(useEffect)
     useEffect(()=>{
         console.log('use-effect')
@@ -58,7 +65,7 @@ const Main = (props) => {
             <Routes>
                 <Route path= '/' element={<Index trips={trips}/>} />
                 <Route path= '/new' element={<New trip={trips} createTrip={createTrip}/> }/>
-                <Route path= '/show/:id' element={<Show trips={trips}/>} />
+                <Route path= '/show/:id' element={<Show trips={trips} deleteTrip={deleteTrip}/>} />
                 <Route path='/edit/:id' element={<Edit trips={trips} updateTrip={updateTrip}/>} />
             </Routes>
             

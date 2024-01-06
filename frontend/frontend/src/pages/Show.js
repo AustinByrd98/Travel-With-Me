@@ -14,6 +14,12 @@ const params = useParams()
   if(!trip){
     return( <h2> Loading... </h2>)
   }
+  const removeTrip =(e)=>{
+    e.preventDefault()
+    props.deleteTrip(trip._id)
+    navigate('/')
+}
+
   console.log(trip.vists)
   return (
     <div className='trips'>
@@ -28,7 +34,7 @@ const params = useParams()
         <p>Location: {trip.tripLocation}</p>
         <p>Trasportation: {trip.travelMeans}</p>
         <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
-        <Footer id={id}/>
+        <Footer id={id} removeTrip={removeTrip}/>
     </div>
   );
 };
