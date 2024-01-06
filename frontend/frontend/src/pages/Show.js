@@ -14,7 +14,7 @@ const params = useParams()
   if(!trip){
     return( <h2> Loading... </h2>)
   }
-
+  console.log(trip.vists)
   return (
     <div className='trips'>
         <h2>Trip Name: {trip.tripName}</h2>
@@ -26,10 +26,9 @@ const params = useParams()
         <p>Lodging: {trip.lodging}</p>
         <p>Lodging Cost: ${trip.lodgingPrice}</p>
         <p>Location: {trip.tripLocation}</p>
-        <p>Visits: {trip.visits}</p>
         <p>Trasportation: {trip.travelMeans}</p>
         <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
-        <Footer />
+        <Footer id={id}/>
     </div>
   );
 };
