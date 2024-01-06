@@ -5,7 +5,7 @@ const {tripsCtrl} = require('../controllers')
 //routes
 
 router.get('/', tripsCtrl.getTrips)
-router.post('/new', tripsCtrl.createTrip)
+router.post('/', tripsCtrl.createTrip)
 router.put('/:id',tripsCtrl.updateTrips)
 router.delete('/:id', tripsCtrl.deleteTrip)
 
