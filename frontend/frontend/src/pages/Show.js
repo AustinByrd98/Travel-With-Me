@@ -3,11 +3,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../components/footer"
 
 const Show = (props) => {
+
   const trips = props.trips 
+  console.log(trips)
   const params = useParams()
   const navigate = useNavigate()
   const id = params.id
-  const trip = trips.find((trip) => trip._id === id)
+  const trip = trips?.find((trip) => trip._id === id)
 
   return (
     <div className='trips'>

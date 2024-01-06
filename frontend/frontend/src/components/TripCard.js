@@ -15,7 +15,7 @@ function TripCard(props) {
     const renderCard = (card, index)=>{
 
     return (
-        <NavLink to={'/trip/${trips._id}'}>
+        <NavLink to={`/show/${card._id}`}>
         <div className="trip-card"> 
         <Card key={index} style={{ width: '25rem' }} className="h-80 shadow-sm bg-white rounded">  
             <Card.Body className="Card-body">
