@@ -1,0 +1,85 @@
+// @font-face {
+//     font-family: 'Pacifico'; 
+//     src: ('../resources/Pacifico-Regular.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+body {
+    background-color: #62929e; //Blue (Munsell)
+    // background-image: url(https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg;)
+}
+
+h1 {
+    padding: 2%;
+    font-size: 5em;
+    background-color: #cee0dc;
+    margin-bottom: 0%;
+    color: #404834;
+    font-family: "Pacifico",
+}
+
+.MainNavBar {
+    font-size: 1.5em;
+    background-color: #c6c5b9;
+    margin-bottom: 0%;
+
+    .nav-container {
+        background-color: #c6c5b9;
+    }
+
+    .mr-auto {
+        background-color: #c6c5b9;
+    }
+
+    .NavLinkStyle {
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 12px;
+        background-color: #c6c5b9;
+        color: #404834;
+        text-decoration: none;
+        font-size: larger;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.trip-card {
+    display: flex;
+    justify-content: center;
+
+    .card {
+        width: 45dvh;
+        margin: 20px;
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .card-title {
+                margin-bottom: 10;
+                font-weight: bold;
+                text-decoration: none;
+                color: black;
+                font-size: xx-large;
+            }
+
+            .card-img-top {
+                width: 70%;
+                align-items: center;
+            }
+
+            .cardText {
+                text-decoration: none;
+                color: black;
+                font-size: larger;
+            }
+        }
+    }
+}

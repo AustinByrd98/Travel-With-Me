@@ -1,16 +1,18 @@
 import './App.css';
-import Header from "./components/header.js"
-import NavBar from "./components/navBar.js"
-import New from "./pages/New.js"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss'
+import Header from "./components/header.js";
+import MainNavBar from "./components/navBar.js";
 import Main from './components/Main.js'
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Header/>
+       <MainNavBar/>
       <Main/>
-      <NavBar/>
+      <MainNavBar/>
     </div>
   );
 }

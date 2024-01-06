@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -11,8 +12,8 @@ const Footer = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className="mr-auto justify-content-center">
-              <Nav.Link href="#edit">Edit</Nav.Link>
-              <Nav.Link href="#delete">Delete</Nav.Link>
+              <NavLink href="#edit">Edit</NavLink>
+              <NavLink href="#delete">Delete</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

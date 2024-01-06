@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Header from "frontend/frontend/public/components/header.js";
+import NavBar from '../components/navBar'
 
 Header = () => {
   <Header></Header>;
 };
+
+NavBar = () => {
+  <NavBar></NavBar>
+}
+
 
 // initialData to provide data to components before data has been fectched
 // onSave waits for one data is returned
