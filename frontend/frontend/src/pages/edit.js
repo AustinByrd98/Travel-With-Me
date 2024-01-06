@@ -14,11 +14,13 @@ const Edit = (props) => {
   const navigate = useNavigate();
   console.log(trip);
 
-  const [editForm, setEditForm] = useState(trip);
 
-  if (!trip) {
-    return <h2> Loading... </h2>;
-  }
+  // trip was undefined, needed to provided a default inital state - used or operator 
+  const [editForm, setEditForm] = useState(trip || {tripName: ''});
+
+  // if (!trip) {
+  //   return <h2> Loading... </h2>;
+  // }
 
   //   // state for edit from
 
@@ -35,7 +37,6 @@ const Edit = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.updateTrip(editForm, id)
-    navigate('/')
     //onSave(editForm);
   };
 

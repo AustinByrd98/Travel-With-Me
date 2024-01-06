@@ -35,7 +35,7 @@ const Main = (props) => {
         })
         getTrips()
     }
-    const updateTrip = async (trip,id) =>{
+    const updateTrip = async (trip, id) =>{
         await fetch(URL + id,{
             method:'put',
             headers:{
