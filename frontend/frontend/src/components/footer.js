@@ -13,10 +13,11 @@ const Footer = (props) => {
         <Container className="nav-container justify-content-center">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="mr-auto justify-content-center">
-              <NavLink to="/" className="NavLinkStyle">Home</NavLink>
-              <NavLink to= {`/edit/:${id}`} className="NavLinkStyle" >Edit</NavLink>
+            <Nav className="mr-auto justify-content-center">            
+             <NavLink to="/" className="NavLinkStyle">Home</NavLink>
+              <NavLink to= {`/edit/${id}`} className="NavLinkStyle" >Edit</NavLink>
               <NavLink to="#delete"className="NavLinkStyle">Delete</NavLink>
+
             </Nav>
           </Navbar.Collapse>
         </Container>

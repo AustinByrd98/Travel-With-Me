@@ -7,18 +7,16 @@ const Edit = (props) => {
 
 
 
-  console.log(props)
-  const params = useParams();
-  const trips = props.trips;
-  console.log(trips);
-  const id = params.id;
+  const params = useParams()
+  const trips = props.trips 
+  console.log(trips)
+  const id = params.id
   console.log(id)
   const trip = trips?.find((trip) => trip._id === id)
-   console.log(trip);
-  const navigate = useNavigate(); 
-  
+  const navigate = useNavigate()
+    console.log(trip)
   const [editForm, setEditForm] = useState(trip);
-  if (!trip) {
+  if (!editForm) {
     return <h2> Loading... </h2>;
   }
   
@@ -44,7 +42,7 @@ const Edit = (props) => {
   // preventDefault prevents the form from actually submitting
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateTrip(editForm, id)
+    props.updateTrip(editForm, trip._id)
     //onSave(editForm);
   };
 
