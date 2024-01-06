@@ -29,9 +29,10 @@ function TripCard(props) {
         )
     }
     return (
-        <div className='Cards'>
-            {props.trips.map((card, index) => renderCard(card, index))}
-        </div>)
+    <div className='Cards'>
+{props.trips.map((card,index)=>renderCard(card,index))}
+</div>)
+
 
 }
 
