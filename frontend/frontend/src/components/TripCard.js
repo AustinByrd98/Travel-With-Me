@@ -12,10 +12,11 @@ function TripCard(props) {
         )
     }
 
+
     const renderCard = (card, index) => {
         return (
             <div className="trip-card">
-                <NavLink to={'/trip/${trips._id}'}>
+                <NavLink to={`/show/${card._id}`}>
                     <Card key={index} style={{ width: '25rem' }} className="h-80 shadow-sm bg-white rounded">
                         <Card.Body className="Card-body">
                             <Card.Title className="align-items-start">{card.tripName}</Card.Title>
