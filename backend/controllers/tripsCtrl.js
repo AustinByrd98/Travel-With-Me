@@ -52,13 +52,16 @@ const getTrips =(req,res)=>{
 
 const updateTrips =(req,res)=>{
     const userId = req.session.currentUser.id
-    db.Trips.findOneAndUpdate({id: req.params.id, user: userId}, req.body, {new:true})
+    db.Trips.findOneAndUpdate({_id: req.params.id, user: userId}, req.body, {new:true})
     .then((updatedTrip)=>{
         if(!updatedTrip){
             res.status(400).json({message:"Couldn't update trip"})
         } else{
-            res.status(200).json({data:updatedTrip})
+            res.status(200).json({message: "Trip updated successfully"})
         }
+    })
+    .catch((error) => {
+        res.status(500).json({message: "Server error", error:error.message})
     })
 }
 
@@ -79,7 +82,7 @@ const deleteTrip =(req,res)=>{
                 }
             })
             .catch((error) => {
-                res.status(500).json({message: "server error", error:error})
+                res.status(500).json({message: "server error", error:error.message})
             })
     })
 }

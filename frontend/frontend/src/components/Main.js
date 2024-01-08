@@ -51,13 +51,13 @@ const Main = (props) => {
                 'Content-Type': "application/json"
             },
             body:JSON.stringify(trip),
-            credentials: "inlcude" //Inlcude credentials (cookies) with the request
+            credentials: "include" //Inlcude credentials (cookies) with the request
         })
-        if(response.ok) {
-            getTrips() //Refresh the list of trips after successful deletion
-        } else {
-            console.error("failed to update trip")
-        }
+       if(response.ok) {
+        getTrips() //Refresh the list of trips after successful edit
+       } else {
+        console.error("failed to edit trip")
+       }
     }
 
     const deleteTrip = async (id)=>{
