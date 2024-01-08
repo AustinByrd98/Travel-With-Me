@@ -11,7 +11,7 @@ const Main = (props) => {
     console.log('hi im here')
     const [ trips, setTrips ] = useState(null) 
 
-    const URL = 'http://localhost:4000/trips/' 
+    const URL = 'https://travel-with-me.onrender.com' 
 
     // function to get trips 
     // sending a request to fetch  data from the url 
