@@ -35,3 +35,5 @@ const MainNavBar = (props) => {
         </div>
     );
 }
+
+export default MainNavBar

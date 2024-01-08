@@ -51,7 +51,7 @@ const getTrips =(req,res)=>{
 }
 
 const updateTrips =(req,res)=>{
-    const userId = req.session.currentUser._id
+    const userId = req.session.currentUser.id
     db.Trips.findOneAndUpdate({id: req.params.id, user: userId}, req.body, {new:true})
     .then((updatedTrip)=>{
         if(!updatedTrip){
@@ -63,14 +63,24 @@ const updateTrips =(req,res)=>{
 }
 
 const deleteTrip =(req,res)=>{
-    const userId = req.session.currentUser._id
-    db.Trips.findOneAndDelete({id: req.params.id, user: userId})
+    const userId = req.session.currentUser.id
+    db.Trips.findOneAndDelete({_id: req.params.id, user: userId})
     .then((deletedTrip)=>{
         if(!deletedTrip){
-            res.status(400).json({message:"Couldn't delete trip"})
-        } else{
-            res.status(200).json({data:deletedTrip, message:"trip deleted"})
-        }
+            return res.status(400).json({message:"Couldn't delete trip"})
+        } 
+            //Remove the trip Id from the user's trip array
+            return db.Users.findOneAndUpdate({_id: userId}, {$pull: {trips: req.params.id}})
+            .then((updatedUser) => {
+                if(!updatedUser) {
+                    res.status(400).json({message: "Couldn't update trip"})
+                } else {
+                    res.status(200).json({message: "removed trip from user"})
+                }
+            })
+            .catch((error) => {
+                res.status(500).json({message: "server error", error:error})
+            })
     })
 }
 

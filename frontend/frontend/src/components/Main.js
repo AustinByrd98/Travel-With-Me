@@ -1,7 +1,8 @@
 import React, {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Index from '../pages/index';
-import New from "../pages/new.js";
+import New from "../pages/New.js";
 import Show from "../pages/Show"
 import { BrowserRouter } from "react-router-dom";
 import Edit from "../pages/edit.js"
@@ -9,6 +10,7 @@ import Edit from "../pages/edit.js"
 // use trips as state, but setting it to null 
 const Main = (props) => {
     console.log('hi im here')
+    const navigate = useNavigate();
     const [ trips, setTrips ] = useState(null) 
 
     const URL = 'http://localhost:4000/trips/' 
@@ -28,7 +30,7 @@ const Main = (props) => {
     }
 
     const createTrip = async (trip) =>{
-        const response = await fetch(URL+'/new',{
+        const response = await fetch(URL ,{
             method:'post',
             headers:{
                 'Content-Type': "application/json"
@@ -41,22 +43,33 @@ const Main = (props) => {
         }
         getTrips()
     }
+
     const updateTrip = async (trip, id) =>{
-        await fetch(URL + id,{
+        const response = await fetch(URL + id,{
             method:'put',
             headers:{
                 'Content-Type': "application/json"
             },
-            body:JSON.stringify(trip)
+            body:JSON.stringify(trip),
+            credentials: "inlcude" //Inlcude credentials (cookies) with the request
         })
-        getTrips()
+        if(response.ok) {
+            getTrips() //Refresh the list of trips after successful deletion
+        } else {
+            console.error("failed to update trip")
+        }
     }
 
     const deleteTrip = async (id)=>{
-        await fetch(URL + id,{
+        const response = await fetch(URL + id,{
             method:'DELETE',
+            credentials: "include" //Include credentials (cookies) with the request
         })
-        getTrips()
+        if(response.ok) {
+            getTrips() //Refresh the list of trips after successful deletion
+        } else {
+            console.error("failed to delete trip")
+        }
     }
 
     useEffect(()=>{
