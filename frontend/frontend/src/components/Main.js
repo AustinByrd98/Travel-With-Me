@@ -13,7 +13,7 @@ const Main = (props) => {
     const navigate = useNavigate();
     const [ trips, setTrips ] = useState(null) 
 
-    const URL = 'https://travel-with-me.onrender.com' 
+    const URL = 'https://travel-with-me.onrender.com/trips' 
 
     // function to get trips 
     // sending a request to fetch  data from the url 
@@ -45,7 +45,7 @@ const Main = (props) => {
     }
 
     const updateTrip = async (trip, id) =>{
-        const response = await fetch(URL + id,{
+        const response = await fetch(URL + "/" + id,{
             method:'put',
             headers:{
                 'Content-Type': "application/json"
@@ -61,7 +61,7 @@ const Main = (props) => {
     }
 
     const deleteTrip = async (id)=>{
-        const response = await fetch(URL + id,{
+        const response = await fetch(URL + "/" + id,{
             method:'DELETE',
             credentials: "include" //Include credentials (cookies) with the request
         })

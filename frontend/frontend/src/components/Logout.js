@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Logout = (props) => {
-    const URL = "http://localhost:4000/"
+    const URL = "https://travel-with-me.onrender.com"
     const navigate = useNavigate();
     //Function for users to logout
     const logoutUser = async() => {
-        const response = await fetch(URL + "session/logout", {
+        const response = await fetch(URL + "/session/logout", {
             method: "post",
             credentials: "include"
         });
