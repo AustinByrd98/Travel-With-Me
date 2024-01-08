@@ -13,7 +13,7 @@ const Main = (props) => {
     const navigate = useNavigate();
     const [ trips, setTrips ] = useState(null) 
 
-    const URL = 'https://travel-with-me.onrender.com' 
+    const URL = 'http://localhost:4000/trips' 
 
     // function to get trips 
     // sending a request to fetch  data from the url 
