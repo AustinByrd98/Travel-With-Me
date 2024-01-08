@@ -3,14 +3,15 @@ import { Route, Routes } from 'react-router-dom';
 import Index from '../pages/index';
 import New from "../pages/new.js";
 import Show from "../pages/Show"
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Edit from "../pages/edit.js"
 
 // use trips as state, but setting it to null 
 const Main = (props) => {
-    const navigate = useNavigate()
+    console.log('hi im here')
     const [ trips, setTrips ] = useState(null) 
 
-    const URL = 'http://localhost:4000/trips' 
+    const URL = 'http://localhost:4000/trips/' 
 
     // function to get trips 
     // sending a request to fetch  data from the url 
@@ -27,7 +28,7 @@ const Main = (props) => {
     }
 
     const createTrip = async (trip) =>{
-        const response = await fetch(URL, {
+        const response = await fetch(URL+'/new',{
             method:'post',
             headers:{
                 'Content-Type': "application/json"
@@ -40,6 +41,23 @@ const Main = (props) => {
         }
         getTrips()
     }
+    const updateTrip = async (trip, id) =>{
+        await fetch(URL + id,{
+            method:'put',
+            headers:{
+                'Content-Type': "application/json"
+            },
+            body:JSON.stringify(trip)
+        })
+        getTrips()
+    }
+
+    const deleteTrip = async (id)=>{
+        await fetch(URL + id,{
+            method:'DELETE',
+        })
+        getTrips()
+    }
 
     useEffect(()=>{
         if(props.user) {
@@ -48,14 +66,15 @@ const Main = (props) => {
             setTrips(null)
         }
     },[props.user])
-    
+
     return (
         <main>
            
             <Routes>
                 <Route path= '/' element={<Index trips={trips}/>} />
                 <Route path= '/new' element={<New trip={trips} createTrip={createTrip}/> }/>
-                <Route path= '/show/:id' element={<Show trip={trips}/>} />
+                <Route path= '/show/:id' element={<Show trips={trips} deleteTrip={deleteTrip}/>} />
+                <Route path='/edit/:id' element={<Edit trips={trips} updateTrip={updateTrip}/>} />
             </Routes>
             
         </main>
