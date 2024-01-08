@@ -29,6 +29,7 @@ const Register = ({ newUser }) => {
     };
 
     return (
+        <div className="RegisterStyle">
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
@@ -36,32 +37,33 @@ const Register = ({ newUser }) => {
                 value={registerForm.name}
                 onChange={handleInputChange}
                 placeholder="Name"
-            />
+            /> <br />
             <input
                 type="email"
                 name="email"
                 value={registerForm.email}
                 onChange={handleInputChange}
                 placeholder="Email"
-            />
+            /> <br />
             <input
                 type="text"
                 name="username"
                 value={registerForm.username}
                 onChange={handleInputChange}
                 placeholder="Username"
-            />
+            /> <br />
             <input
                 type="password"
                 name="password"
                 value={registerForm.password}
                 onChange={handleInputChange}
                 placeholder="Password"
-            />
-            <button type="submit">
+            /> <br />
+            <button type="submit" className="submitButton">
                 Register
             </button>
         </form>
+        </ div>
     )
 }
 

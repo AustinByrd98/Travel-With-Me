@@ -1,3 +1,11 @@
+Our team created a travel planning & budgeting app. The vision for the app was initially for the budgeting aspect of the app to be a unique aspect of our build. With the current version of the application we can create new users. Our users can then add & edit their trips. Users currently can only view their own trips. Users can also delete trips once they have returned from them.
+
+To create a user they are required to provide a Name, Username, Email, & password. For users to create trips they are required to provide only a name for the trip which generates a card that doubles as a link to the details of their trip. Optionally the user may also provide details for their travel plans. They may provide transportation accommodations, Food plans, lodging accommodations, and number of people on the trip.
+
+[Initial Project Wireframe](vscode-local:/c%253A/Users/stran/OneDrive/Desktop/Travel%2520wireframe.pdf)
+
+Our project is ready for prestations and does meet all MVP requirements. In the future we would like to implement some more unique aspects to our project, like the ability to add other users to trips that you have planned.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
