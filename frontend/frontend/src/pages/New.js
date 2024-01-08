@@ -50,7 +50,7 @@ export default function New(props){
         <span>Name your Trip </span> <input type="text" name="tripName" value={newForm.tripName} onChange={handleChange}/>
       </label><br />
       <label>
-        <span>Data </span> <input type="text" name="date" value={newForm.date} onChange={handleChange}/><br />
+        <span>Date </span> <input type="text" name="date" value={newForm.date} onChange={handleChange}/><br />
       </label><br />
       <label>
         <span>Number of People </span> <input type="text" name="peopleNumber" value={newForm.peopleNumber} onChange={handleChange}/>
@@ -86,6 +86,4 @@ export default function New(props){
       </div>
     )
 }
-
-
 

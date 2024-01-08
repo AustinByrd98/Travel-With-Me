@@ -13,7 +13,11 @@ const PlansSchema = new mongoose.Schema ({
     tripLocation:{type:String, required:false} , 
     vists:String,
     travelMeans: String,
-    travelMeansPrice: String
+    travelMeansPrice: String,
+    user : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Users"
+    }
 })
 
 const Trips = mongoose.model("Trips", PlansSchema)
