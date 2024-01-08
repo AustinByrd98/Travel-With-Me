@@ -13,5 +13,6 @@ mongoose.connection
 .on('error',(error)=>{console.log(error)})
 
 module.exports={
-    Trips: require('./Trips')
+    Trips: require('./Trips'),
+    Users: require('./Users')
 }
