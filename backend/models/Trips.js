@@ -16,8 +16,7 @@ const PlansSchema = new mongoose.Schema ({
     travelMeansPrice: String,
     user : {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Users",
-        required: true
+        ref: "Users"
     }
 })
 

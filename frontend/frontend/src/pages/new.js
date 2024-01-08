@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NewForm from "../components/newForm"
+
 
 export default function New(props){
     console.log(props)
@@ -86,6 +86,7 @@ export default function New(props){
       </label><br/>
       <input type="submit" value="submit" />
     </form>
+   
         </>
     )
 }

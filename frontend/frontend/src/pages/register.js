@@ -42,21 +42,21 @@ const Register = ({ newUser }) => {
                 name="email"
                 value={registerForm.email}
                 onChange={handleInputChange}
-                placeholder="Name"
+                placeholder="Email"
             />
             <input
                 type="text"
                 name="username"
                 value={registerForm.username}
                 onChange={handleInputChange}
-                placeholder="Name"
+                placeholder="Username"
             />
             <input
                 type="password"
                 name="password"
                 value={registerForm.password}
                 onChange={handleInputChange}
-                placeholder="Name"
+                placeholder="Password"
             />
             <button type="submit">
                 Register

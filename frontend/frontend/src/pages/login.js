@@ -1,7 +1,9 @@
 import React from "react";
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ userLogin }) => {
+    const naviagate = useNavigate();
     //Local state for username and password
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
