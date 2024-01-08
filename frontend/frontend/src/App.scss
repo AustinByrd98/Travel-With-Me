@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Hello-Val"; 
+    font-family: "Hello-Val";
     src: ('../resources/Hello Valentina.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -48,6 +48,29 @@ h1 {
         padding-top: 0;
         padding-bottom: 0;
     }
+
+    Button {
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 12px;
+        background-color: #c6c5b9;
+        color: #404834;
+        text-decoration: none;
+        font-size: larger;
+        border: 0; 
+    }
+
+    h3 {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 4px;
+        padding: 12px;
+        background-color: #c6c5b9;
+        color: #404834;
+        text-decoration: none;
+        font-size: larger;
+        font-weight: normal;
+    }
 }
 
 .trip-card {
@@ -87,17 +110,21 @@ h1 {
 
 .FormStyle {
     text-align: center;
+
     span {
         font-size: larger;
     }
+
     label {
         margin-left: 0%;
         margin-top: 1%;
     }
+
     input {
         width: 300px;
     }
-    .submitButton{
+
+    .submitButton {
         margin-top: 1%;
         width: auto;
     }
@@ -109,6 +136,7 @@ h1 {
         margin-top: 1%;
         color: white;
     }
+
     p {
         margin-top: 1%;
         font-size: larger;
@@ -158,4 +186,33 @@ h1 {
         color: White;
         border: none;
     }
+}
+
+.RegisterStyle {
+    text-align: center;
+
+    span {
+        font-size: larger;
+    }
+
+    input {
+        width: 300px;
+        margin-left: 0%;
+        margin-top: 1%;
+    }
+
+    .submitButton {
+        margin-top: 1%;
+        width: auto;
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 12px;
+        background-color: #62929e;
+        color: #404834;
+        text-decoration: none;
+        font-size: 40px;
+        color: White;
+        border: none;
+    }
+
 }

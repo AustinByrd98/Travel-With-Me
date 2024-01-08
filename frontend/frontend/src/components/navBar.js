@@ -19,7 +19,7 @@ const MainNavBar = (props) => {
                                   <>
                                     <NavLink to="/new" className="NavLinkStyle">New Trip</NavLink>
                                     <h3>{props.user.username}</h3>
-                                    <Logout setUser={props.setUser}/>
+                                    <Logout setUser={props.setUser} />
                                   </>
                                 ) : (
                                 <>

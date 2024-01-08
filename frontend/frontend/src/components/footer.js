@@ -18,7 +18,6 @@ const Footer = (props) => {
              <NavLink to="/" className="NavLinkStyle">Home</NavLink>
               <NavLink to= {`/edit/${id}`} className="NavLinkStyle" >Edit</NavLink>
               <button onClick={props.removeTrip}  className="DeleteRouteStyle" >DELETE</button>
-
             </Nav>
           </Navbar.Collapse>
         </Container>

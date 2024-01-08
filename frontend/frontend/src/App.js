@@ -4,11 +4,8 @@ import './App.scss'
 import {useState} from "react";
 import Header from "./components/header.js";
 import MainNavBar from "./components/navBar.js";
-import TripCard from './components/TripCard.js'
 import Main from './components/Main.js'
 import Auth from './components/Auth.js'
-
-
 
 function App(props) {
 

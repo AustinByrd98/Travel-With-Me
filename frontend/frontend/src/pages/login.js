@@ -25,6 +25,7 @@ const Login = ({ userLogin }) => {
     };
 
     return (
+        <div className="RegisterStyle">
         <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -32,18 +33,19 @@ const Login = ({ userLogin }) => {
                     value={username}
                     onChange={handleInputChange}
                     placeholder="Username"
-                />
+                /> <br />
                 <input
                     type="password"
                     name="password"
                     value={password}
                     onChange={handleInputChange}
                     placeholder="Password"
-                />
-                <button type="submit">
+                /> <br />
+                <button type="submit" className="submitButton">
                     Login
                 </button>
         </form>
+        </div>
     )
 }
 
