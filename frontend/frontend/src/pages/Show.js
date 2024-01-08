@@ -14,23 +14,27 @@ const params = useParams()
   if(!trip){
     return( <h2> Loading... </h2>)
   }
+  const removeTrip =(e)=>{
+    e.preventDefault()
+    props.deleteTrip(trip._id)
+    navigate('/')
+}
 
+  console.log(trip.vists)
   return (
     <div className='trips'>
-        <h2>{trip.tripName}</h2>
-        <p>{trip.date}</p>
-        <p>{trip.peopleNumber}</p>
-        <p>{trip.budget}</p>
-        <p>{trip.foodPlan}</p>
-        <p>{trip.foodPricing}</p>
-        <p>{trip.lodging}</p>
-        <p>{trip.lodgingPrice}</p>
-        <p>{trip.tripLocation}</p>
-        <p>{trip.visits}</p>
-        <p>{trip.travelMeans}</p>
-        <p>{trip.travelMeansPrice}</p>
-        <button onClick={() => navigate('/')}>Back To Trips</button>
-        <Footer />
+        <h2>Trip Name: {trip.tripName}</h2>
+        <p>Trip Date: {trip.date}</p>
+        <p>People: {trip.peopleNumber}</p>
+        <p>Budget: ${trip.budget}</p>
+        <p>Food Plan: {trip.foodPlan}</p>
+        <p>Food Cost Plan: ${trip.foodPricing}</p>
+        <p>Lodging: {trip.lodging}</p>
+        <p>Lodging Cost: ${trip.lodgingPrice}</p>
+        <p>Location: {trip.tripLocation}</p>
+        <p>Trasportation: {trip.travelMeans}</p>
+        <p>Trasportation Cost: ${trip.travelMeansPrice}</p>
+        <Footer id={id} removeTrip={removeTrip}/>
     </div>
   );
 };

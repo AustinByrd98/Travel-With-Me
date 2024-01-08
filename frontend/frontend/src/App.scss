@@ -1,9 +1,9 @@
-// @font-face {
-//     font-family: 'Pacifico'; 
-//     src: ('../resources/Pacifico-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: "Hello-Val"; 
+    src: ('../resources/Hello Valentina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     background-color: #62929e; //Blue (Munsell)
@@ -16,8 +16,9 @@ h1 {
     background-color: #cee0dc;
     margin-bottom: 0%;
     color: #404834;
-    font-family: "Pacifico",
+    font-family: "Hello-Val",
 }
+
 
 .MainNavBar {
     font-size: 1.5em;
@@ -81,5 +82,68 @@ h1 {
                 font-size: larger;
             }
         }
+    }
+}
+
+.FormStyle {
+    text-align: center;
+    span {
+        font-size: larger;
+    }
+    label {
+        margin-left: 0%;
+        margin-top: 1%;
+    }
+    input {
+        width: 300px;
+    }
+    .submitButton{
+        margin-top: 1%;
+        width: auto;
+    }
+
+}
+
+.trips {
+    h2 {
+        margin-top: 1%;
+        color: white;
+    }
+    p {
+        margin-top: 1%;
+        font-size: larger;
+        color: white;
+    }
+
+}
+
+.RouterBar {
+    font-size: 1.5em;
+    background-color: #62929e;
+    margin-bottom: 0%;
+
+    .nav-container {
+        background-color: #62929e;
+    }
+
+    .mr-auto {
+        background-color: #62929e;
+    }
+
+    .NavLinkStyle {
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 12px;
+        background-color: #62929e;
+        color: #404834;
+        text-decoration: none;
+        font-size: larger;
+        color: White;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }

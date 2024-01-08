@@ -4,20 +4,26 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom"
 
-const Footer = () => {
+const Footer = (props) => {
+  const id = props.id
+  
   return (
+    <div className="RouterBar">
     <div class="d-flex justify-content-center">
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
+        <Container className="nav-container justify-content-center">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="mr-auto justify-content-center">
-              <NavLink href="#edit">Edit</NavLink>
-              <NavLink href="#delete">Delete</NavLink>
+            <Nav className="mr-auto justify-content-center">            
+             <NavLink to="/" className="NavLinkStyle">Home</NavLink>
+              <NavLink to= {`/edit/${id}`} className="NavLinkStyle" >Edit</NavLink>
+              <button onClick={props.removeTrip}  className="NavLinkStyle" >DELETE</button>
+
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+    </div>
     </div>
   );
 };

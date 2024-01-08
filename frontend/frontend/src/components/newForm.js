@@ -40,7 +40,7 @@ const NewForm = (props) => {
         <p>Destination</p> <input type="text" name="tripLocation" onChange={handleChange} />
       </label>
       <label>
-        <p>Visits</p> <input type="text" name="visits" onChange={handleChange} />
+        <p>Visits</p> <input type="text" name="vists" onChange={handleChange} />
       </label>
       <label>
         <p>Travel Means</p>
