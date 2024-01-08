@@ -1,14 +1,16 @@
 import React, {useEffect, useState } from "react";
 import { Route, Routes } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Index from '../pages/index';
 import New from "../pages/New.js";
-import Show from "../pages/Show.js";
-import { BrowserRouter} from "react-router-dom";
-import Edit from "../pages/edit.js";
+import Show from "../pages/Show"
+import { BrowserRouter } from "react-router-dom";
+import Edit from "../pages/edit.js"
 
 // use trips as state, but setting it to null 
 const Main = (props) => {
     console.log('hi im here')
+    const navigate = useNavigate();
     const [ trips, setTrips ] = useState(null) 
 
     const URL = 'http://localhost:4000/trips/' 
@@ -19,46 +21,65 @@ const Main = (props) => {
     const getTrips = async() => {
         //  pause function here until we get requested response 
         // page is dependent on data, wait to load page until we have data we need 
-        const response = await fetch(URL)
+        const response = await fetch(URL, {
+            credentials: "include" //Include credentials (cookie) with the request
+        })
         const data = await response.json()
         console.log(data.data+"line 22")
         setTrips(data.data)
     }
 
     const createTrip = async (trip) =>{
-        await fetch(URL ,{
+        const response = await fetch(URL ,{
             method:'post',
             headers:{
                 'Content-Type': "application/json"
             },
-            body:JSON.stringify(trip)
+            body:JSON.stringify(trip),
+            credentials: "include"
         })
+        if(response.ok) {
+            navigate('/');
+        }
         getTrips()
     }
+
     const updateTrip = async (trip, id) =>{
-        await fetch(URL + id,{
+        const response = await fetch(URL + id,{
             method:'put',
             headers:{
                 'Content-Type': "application/json"
             },
-            body:JSON.stringify(trip)
+            body:JSON.stringify(trip),
+            credentials: "include" //Inlcude credentials (cookies) with the request
         })
-        getTrips()
+       if(response.ok) {
+        getTrips() //Refresh the list of trips after successful edit
+       } else {
+        console.error("failed to edit trip")
+       }
     }
 
     const deleteTrip = async (id)=>{
-        await fetch(URL + id,{
+        const response = await fetch(URL + id,{
             method:'DELETE',
+            credentials: "include" //Include credentials (cookies) with the request
         })
-        getTrips()
+        if(response.ok) {
+            getTrips() //Refresh the list of trips after successful deletion
+        } else {
+            console.error("failed to delete trip")
+        }
     }
 
-    console.log(useEffect)
     useEffect(()=>{
-        console.log('use-effect')
-        getTrips()
-    },[])
-    console.log(trips)
+        if(props.user) {
+            getTrips();
+        } else {
+            setTrips(null)
+        }
+    },[props.user])
+
     return (
         <main>
            
