@@ -9,11 +9,11 @@ import Register from "../pages/register"
 const Auth = (props) => {
     const navigate = useNavigate()
 
-    const URL = "https://travel-with-me.onrender.com"
+    const URL = "https://travel-with-me.onrender.com/"
 
     //Function for registered users loggin in
     const userLogin = async(username, password) => {
-        const response = await fetch(URL + "/session", {
+        const response = await fetch(URL + "session", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const Auth = (props) => {
 
     //Function for new users registering
     const newUser = async(username, password) => {
-        const response = await fetch(URL + "/newuser", {
+        const response = await fetch(URL + "newuser", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -48,7 +48,7 @@ const Auth = (props) => {
 
     //Function for users to logout
      const logoutUser = async() => {
-        const response = await fetch(URL + "/logout", {
+        const response = await fetch(URL + "logout", {
             method: "get",
             credentials: "include"
         });
